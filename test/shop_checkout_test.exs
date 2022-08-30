@@ -18,6 +18,10 @@ defmodule ShopCheckoutTest do
     assert ShopCheckout.checkout([:gr1,:cf1,:sr1,:cf1,:cf1]) == 30.57
   end
 
+  test "wrong items in the basket" do
+    assert ShopCheckout.checkout([:gr1,:cf1,:sr1,:cf1,:cf1, :unknown]) == 30.57
+  end
+
   test "green_tea" do
     assert ShopCheckout.total_gr(0) == 0
     assert ShopCheckout.total_gr(1) == 3.11

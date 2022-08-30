@@ -23,8 +23,11 @@ defmodule ShopCheckout do
     total_gr(gr1) + total_sr(sr1) + total_cf(cf1)
   end
 
-  def beep(itemId, acc) do
+  def beep(itemId, acc) when itemId == :gr1 or itemId == :sr1 or itemId == :cf1 do
       Map.update!(acc, itemId, &(&1 + 1))
+  end
+  def beep(_itemId, acc) do
+      acc
   end
 
   # -----------------------------------------------
