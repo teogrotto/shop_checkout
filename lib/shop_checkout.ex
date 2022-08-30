@@ -12,7 +12,7 @@ defmodule ShopCheckout do
       :world
 
   """
-  def hello do
+  def checkout(a) do
     :world
   end
 end
